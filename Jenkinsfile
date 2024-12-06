@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh " cd 3tier-nodejs/frontend && docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} . "
+                sh " cd frontend && docker build -t ${DOCKER_IMAGE}:${IMAGE_TAG} . "
             }
         }
 
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: "${GIT_CREDENTIALS}", usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                     sh """
-                    git config --global user.email "youssef138adel@gmail.com"
+                    git config --global user.email "youssef138adel@gmail.com "
                     git config --global user.name "youssef-138"
                     git add ${YAML_FILE}
                     git commit -m "Update image to ${DOCKER_IMAGE}:${IMAGE_TAG}"
