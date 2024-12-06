@@ -45,7 +45,7 @@ pipeline {
                     git config --global user.name "youssef-138"
                     git add ${YAML_FILE}
                     git commit -m "Update image to ${DOCKER_IMAGE}:${IMAGE_TAG}"
-                    git push https://${GIT_USERNAME}:${GIT_PASSWORD}@https://github.com/youssef-138/argocd.git HEAD:master
+                    git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/youssef-138/argocd.git HEAD:master
                     """
                 }
             }
