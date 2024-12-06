@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  namespace: namespace1
+  labels:
+    environment: dev
+spec:
+  containers:
+    - name: my-container
+      image: youssef138/argocd
+      ports:
+        - containerPort: 3000
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
