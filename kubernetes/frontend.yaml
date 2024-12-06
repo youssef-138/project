@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: my-container
-      image: youssef138/argocd
+      image: youssef138/argocd:21
       ports:
         - containerPort: 3000
       resources:
